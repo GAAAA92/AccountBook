@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/light_blue_900"
+    android:orientation="vertical"
+    tools:context=".Activitys.MainActivity">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/centerContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        />
+
+
+    <RadioGroup
+        android:id="@+id/rg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_rg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_liushui"
+            style="@style/style_rb"
+            android:text="@string/liushui"
+            android:drawableTop="@drawable/selector_rb_icon_liushui"
+            />
+        <RadioButton
+            android:id="@+id/rb_tongji"
+            style="@style/style_rb"
+            android:text="@string/tongji"
+            android:drawableTop="@drawable/selector_rb_icon_tongji"
+            />
+        <Button
+            android:id="@+id/btn_add"
+            style="@style/style_btn_add"
+            android:text="记一笔"
+            />
+        <RadioButton
+            android:id="@+id/rb_zhanghu"
+            style="@style/style_rb"
+            android:text="@string/zhanghu"
+            android:drawableTop="@drawable/selector_rb_icon_zhanghu"
+            />
+        <RadioButton
+            android:id="@+id/rb_shezhi"
+            style="@style/style_rb"
+            android:text="@string/shezhi"
+            android:drawableTop="@drawable/selector_rb_icon_shezhi"
+            />
+
+
+
+    </RadioGroup>
+
+</LinearLayout>
