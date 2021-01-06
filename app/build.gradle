@@ -26,6 +26,7 @@ android {
                     'src/main/res_fragment_tongji',
                     'src/main/res_fragment_zhanghu',
                     'src/main/res_fragment_shezhi',
+                    'src/main/res_add',
             ]
         }
     }

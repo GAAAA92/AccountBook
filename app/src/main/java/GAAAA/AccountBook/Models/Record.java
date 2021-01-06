@@ -5,7 +5,6 @@ import org.litepal.crud.LitePalSupport;
 import java.util.Date;
 
 public class Record extends LitePalSupport {
-    private int id;
     private String category_1;
     private String category_2;
     private String content;
@@ -13,10 +12,7 @@ public class Record extends LitePalSupport {
     private Date date;
     private int state;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    //region --Setter
     public void setCategory_1(String category_1) {
         this.category_1 = category_1;
     }
@@ -40,11 +36,9 @@ public class Record extends LitePalSupport {
     public void setState(int state) {
         this.state = state;
     }
+    //endregion
 
-    public int getId() {
-        return id;
-    }
-
+    //region --Getter
     public String getCategory_1() {
         return category_1;
     }
@@ -68,4 +62,5 @@ public class Record extends LitePalSupport {
     public int getState() {
         return state;
     }
+    //endregion
 }

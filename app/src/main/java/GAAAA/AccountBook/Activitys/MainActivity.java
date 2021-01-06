@@ -87,8 +87,10 @@ public class MainActivity extends AppCompatActivity {
         centerContent = findViewById(R.id.centerContent);
         fragments = new Fragment[]{ new LiushuiFragment(), new TongjiFragment(), new ZhanghuFragment(), new ShezhiFragment()};
 
+        //设置RadioGroup和RadioBUtton相关事件
+        //RadioButton图标大小
+        //RadioGroup选中改变事件，切换fragment
         rg_bottom = findViewById(R.id.rg_bottom);
-        //设置RadioButton图标大小
         radioButtons = new RadioButton[]{ findViewById(R.id.rb_liushui), findViewById(R.id.rb_tongji), findViewById(R.id.rb_zhanghu), findViewById(R.id.rb_shezhi)};
         for (int i = 0; i < radioButtons.length; i++){
             Drawable[] drawables = new Drawable[4];
@@ -96,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
             drawables[1].setBounds(0, 0, 65, 65);
             radioButtons[i].setCompoundDrawables(null, drawables[1],null,null);
         }
-        btn_add = findViewById(R.id.btn_add);
-
         rg_bottom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -121,6 +121,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Button点击事件，切换到activity_add
+        btn_add = findViewById(R.id.btn_add);
+        btn_add.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     private void setIndexSelected(int index){
