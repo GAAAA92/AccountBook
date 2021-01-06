@@ -23,6 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 import java.util.List;
 
+import GAAAA.AccountBook.Fragments.AddFragment;
 import GAAAA.AccountBook.Fragments.LiushuiFragment;
 import GAAAA.AccountBook.Fragments.ShezhiFragment;
 import GAAAA.AccountBook.Fragments.TongjiFragment;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment[] fragments;
     RadioGroup rg_bottom;
     RadioButton[] radioButtons;
+    AddFragment addFragment;
     Button btn_add;
     FragmentTransaction ft;
 
@@ -84,10 +86,11 @@ public class MainActivity extends AppCompatActivity {
     protected void initView(){
         topTitle = findViewById(R.id.topTitle);
 
+        //region 底部导航栏（RadioGroup）
+        rg_bottom = findViewById(R.id.rg_bottom);
         centerContent = findViewById(R.id.centerContent);
         fragments = new Fragment[]{ new LiushuiFragment(), new TongjiFragment(), new ZhanghuFragment(), new ShezhiFragment()};
 
-        rg_bottom = findViewById(R.id.rg_bottom);
         //设置RadioButton图标大小
         radioButtons = new RadioButton[]{ findViewById(R.id.rb_liushui), findViewById(R.id.rb_tongji), findViewById(R.id.rb_zhanghu), findViewById(R.id.rb_shezhi)};
         for (int i = 0; i < radioButtons.length; i++){
@@ -96,8 +99,6 @@ public class MainActivity extends AppCompatActivity {
             drawables[1].setBounds(0, 0, 65, 65);
             radioButtons[i].setCompoundDrawables(null, drawables[1],null,null);
         }
-        btn_add = findViewById(R.id.btn_add);
-
         rg_bottom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -121,6 +122,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        //endregion
+
+        //region 记一笔按钮
+        btn_add = findViewById(R.id.btn_add);
+        addFragment = new AddFragment();
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addFragment.show(getSupportFragmentManager(), "");
+            }
+        });
+        //endregion
     }
 
     private void setIndexSelected(int index){
