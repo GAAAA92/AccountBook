@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import GAAAA.AccountBook.Fragments.AddFragment;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                new AddFragment().show(getSupportFragmentManager(), "a");
                 Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
             }
         });

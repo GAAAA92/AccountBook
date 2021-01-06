@@ -21,8 +21,9 @@
         <activity
             android:name=".Activitys.MainActivity"
             android:theme="@style/Theme.AccountBook"/>
-        <activity
-            android:name=".Activitys.AddActivity"/>
+
+
+
     </application>
 
 </manifest>

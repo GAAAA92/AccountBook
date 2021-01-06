@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">我的帐本</string>
 
+    <string name="liushui">流水</string>
+    <string name="zhanghu">账户</string>
+    <string name="tongji">统计</string>
+    <string name="shezhi">统计</string>
+
+    <string name="jiyibi">记一笔</string>
+
+    <string name="quxiao">取消</string>
+    <string name="baocun">保存</string>
+
+
 </resources>
