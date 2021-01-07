@@ -6,4 +6,9 @@
         <item name="tabSelectedTextColor">@color/light_blue_900</item>
     </style>
 
+    <style name="Add" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                new AddFragment().show(getSupportFragmentManager(), "a");
+                AddFragment.getInstance().show(getSupportFragmentManager(), "a");
                 Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
             }
         });
