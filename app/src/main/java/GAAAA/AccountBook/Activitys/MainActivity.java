@@ -1,5 +1,6 @@
 package GAAAA.AccountBook.Activitys;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -16,14 +18,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import GAAAA.AccountBook.Fragments.AddFragment;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import GAAAA.AccountBook.Fragments.AddFragment;
 import GAAAA.AccountBook.Fragments.LiushuiFragment;
 import GAAAA.AccountBook.Fragments.ShezhiFragment;
 import GAAAA.AccountBook.Fragments.TongjiFragment;
@@ -50,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
         setStatusBarFullTransparent();
         setFitSystemWindow(true);
 
         initView();
+
         radioButtons[0].setChecked(true);
     }
 
@@ -122,13 +122,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        rg_bottom.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+            @Override
+            public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
+                v.setPadding(v.getPaddingRight(),v.getPaddingTop(),v.getPaddingLeft(),insets.getSystemWindowInsetBottom());
+                return insets;
+            }
+        });
+
 
         //Button点击事件，切换到activity_add
         btn_add = findViewById(R.id.btn_add);
         btn_add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                AddFragment.getInstance().show(getSupportFragmentManager(), "a");
+                AddFragment.getInstance().show(getSupportFragmentManager(), null);
                 Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
             }
         });

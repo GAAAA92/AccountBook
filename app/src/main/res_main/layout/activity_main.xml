@@ -15,7 +15,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:layout_gravity="top">
 
         <TextView
             android:id="@+id/topTitle"
@@ -42,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/bg_rg"
+        android:layout_gravity="bottom"
         android:orientation="horizontal">
 
         <RadioButton
